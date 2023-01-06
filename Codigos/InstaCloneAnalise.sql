@@ -3,6 +3,8 @@ SELECT * FROM usuarios ORDER BY dataCriacao LIMIT 3;
 
 
 /*Encontre o dia em que a maioria dos usuarios se registraram*/
+SET lc_time_names = 'pt_BR';
+
 SELECT DAYNAME(dataCriacao) AS dia, COUNT(*) AS total
     FROM usuarios GROUP BY dia ORDER BY total DESC;
     
